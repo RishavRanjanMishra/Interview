@@ -1,0 +1,20 @@
+The constructor can be defined as the special type of method that is used to initialize the state of an object.
+
+If a class has multiple methods and having same name but different in parameters, It is called Method Overloading.
+
+If a subclass(child class) has same method as declared in parent class, it is called as Method Overriding.
+
+Abstraction is the process of hiding the implementation details of the object and showing only the functionality of the user.
+
+Encapsulation is the process of wrapping code and data together into a single unit.
+Ex:- Capsule which is mixed of several medicines.
+
+Getter method is for read and Setter method is for write.
+
+Coupling refers to Information, Knowledge, dependency of another class.
+It arises when classes are aware of each other i.e. if a class has details information of another class, then there is strong coupling.
+
+The mutable objects are objects whose value can be changed after initialization. Ex :- Java.util.Date, StringBuilder, StringBuffer, etc.
+
+The immutable objects are objects whose value can not be changed after initialization.
+Ex :- All primitive objects, legacy classes, wrapper classes, String class, etc.
