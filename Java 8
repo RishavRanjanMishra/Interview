@@ -1,0 +1,33 @@
+What are the main features introduced in Java 8?
+:-
+  Lambda Expressions
+  Stream API
+  Functional Interfaces
+  Optional
+  Default Methods
+  Date and Time API
+  Methods References.
+
+Lambda Expressions is an anonymous function(a function without name).
+
+Stream API is used to process collections of data in functional programming style.
+It is Immutable(not modify).
+Improve code readability and conciseness.
+Support parallel execution for better performance.
+Encourages functional programming.
+
+Functional Interfaces have exactly one abstract method and are used in lambda expressions.
+
+Optional is used to avoid NullPointerException.
+
+Default Methods is used to add default implementations in interfaces.
+Example :-
+        Interfaces MyInterface {
+		  default void show() {
+		    System.out.println("Default Method");
+		  }
+	    }
+
+Date and Time API is used to improved handling of dates and times.
+
+Method References is used to simplified syntax for calling methods.

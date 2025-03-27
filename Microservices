@@ -1,0 +1,2 @@
+Micriservices Architectiure is a software development approach where an application can be developed, deployed and scaled independently.
+Each service focuses on a specific business capability and communicate with other services using APIs.

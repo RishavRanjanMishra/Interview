@@ -1,0 +1,23 @@
+Creational Design Patterns :-
+                  :- Creational design patterns are concerned with the way of creating objects.
+                  :- These design patterns are used when a decision must be made at the time of instantiation of a class (i.e. creating an object of a class).
+                  :- There are 6 Creational Design Patterns:-
+                                                           1.) Factory Method Pattern.
+                                                           2.) Abstract Factory Pattern.
+                                                           3.) Singleton Pattern.
+                                                           4.) Prototype Pattern.
+                                                           5.) Builder Pattern.
+                                                           6.) Object Pool Pattern.
+
+1.) Factory Method Pattern :-
+                         It is a creational design pattern used in OOP.
+                         It provides an interface of creating objects in a superclass(parent class) but allows subclass(child class) to alter the type of objects that will be created.
+                         This pattern helps promote loose coupling in software design.
+                         Example :- Netflix Plan(Basic, Premium & Standard which comes in NetflixPlanFactory and program as FactoryPatternProgram)
+
+                       :- It has Creator which define an abstract method for creating objects (called factoryMethod).
+                       :-
+
+2.) Singleton Design Pattern :-
+                         It is a creational design pattern that ensure a class has only one instance and provides a global point of access to it.
+                         it is commonly used for managing shared resources such as configuration settings, logging, thread pools and database connection.
