@@ -1,0 +1,33 @@
+Java Collections Framework?
+             :- It provides a set of interfaces and classes to represent and manipulate collections of objects.
+
+Explain the difference between List, Set, and Map.
+             List :- It an ordered collection that allows duplicate elements.
+
+             Set :- It is an unordered collection that does not allow duplicate elements.
+
+				     Map :- It is a collection of key-value pairs.
+
+ArrayList class?
+             :- It is a resizable array implementation of the List interface.
+			          It dynamically grows as elements are added.
+
+LinkedList class?
+            :- It is a doubly-linked list implementation of the List interface.
+			         It provides fast insertion and deletion but slower random access.
+
+HashSet class?
+            :- It is an implementation of the Map interface that uses a hash table for storage.
+			         It allows null keys and values and does not guarantee order
+
+TreeSet class?
+            :- It is an implementation of the Set interface that uses a Red-Black tree for storage.
+			         It provides elements in sorted order.
+
+What is difference between HashMap and HashTable?
+            HashMap :- It is not synchronized and allows null keys and values.
+
+			  	  HashTable :- It is synchronized and does not allow null keys or values.
+
+Collections class?
+            :- It provides utility methods for working with collections, such as sorting, shuffling, and searching.
