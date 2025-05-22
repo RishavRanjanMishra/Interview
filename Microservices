@@ -1,2 +1,80 @@
 Micriservices Architectiure is a software development approach where an application can be developed, deployed and scaled independently.
-Each service focuses on a specific business capability and communicate with other services using APIs.
+Each service focuses on a specific business capability and communicate with other services using APIs(HTTP request).
+Self-Contained, Deployed seprately, Scaled seprately.
+
+Monotholic Architectiure is a way to achive every services is in one place.
+Monolothic Application where all the services are in same place, designing by other members.
+Team Dependencies(Drawback)
+Scability
+
+
+Key component are:-
+              1.) Micriservices(Business Services).
+			  2.) API Gateway.
+			  3.) Service Registry and Discovery.
+			  4.) Configuration Server.
+			  5.) Load Balancer.
+			  6.) Database per Services.
+			  7.) Inter-Service Communication.
+			  8.) Message Broker/Event Bus.
+			  9.) Security.
+			  10.) Monitor and Logging.
+			  11.) CI/CD Pipelines.
+
+Q.) What are Microservices?
+Ans:- Microservices are an architectural style where applications are structured as a collection of loosely coupled, independently deployable services.
+      Each service is responsible for a specific business functionality and communicates with other services via lightweight protocols like HTTP/REST or messaging.
+
+Q.) Difference Between Monolithic and Microservices Architecture
+Ans:- Monolithic	            Microservices
+      Single deployable unit	Multiple independently deployable units
+	  Tight coupling	        Loose coupling
+	  Difficult to scale parts	Easier to scale specific services
+	  Harder for CI/CD	        Supports agile CI/CD
+
+Q.) How Do Microservices Communicate?
+Ans:-Synchronous: REST, gRPC
+     Asynchronous: Messaging queues (Kafka, RabbitMQ)
+	 Use asynchronous for event-driven systems and decoupling.
+
+Q.) What is an API Gateway?
+Ans:- API Gateway is a single entry point for all client requests to microservices.
+      It handles request routing, rate limiting, authentication, etc.
+	  Example: Netflix Zuul, Spring Cloud Gateway.
+
+Q.) What is Service Discovery?
+Ans:- Service Discovery allows microservices to find each other.
+      Tool: Eureka Server
+	  Process:
+	        Service registers itself to Eureka (client).
+			Eureka provides service registry for load balancing and failover.
+
+Q.) What is the Saga Pattern?
+Ans:- Saga is a pattern for managing data consistency across microservices using a sequence of local transactions.
+      Choreography: Events trigger other services.
+	  Orchestration: Central controller manages transactions.
+
+Q.) How Do You Secure Microservices?
+Ans:- Use OAuth2 and JWT for authentication and authorization.
+      API Gateway can validate tokens before routing requests.
+	  Spring Security + Keycloak or Auth0 for enterprise setups.
+
+Q.) What is a Circuit Breaker Pattern?
+Ans:- Used to prevent cascading failures by stopping calls to a failed service.
+      Tool: Resilience4j, Hystrix
+	  Example:
+	  @CircuitBreaker(name =
+	  "orderService", fallbackMethod =
+	  "fallbackOrder")
+
+Q.) How Do You Handle Logging and Monitoring?
+Ans:- Use centralized logging tools like ELK Stack (Elasticsearch, Logstash, Kibana).
+      For monitoring: Prometheus + Grafana.
+	  Use distributed tracing: Zipkin or Jaeger to trace request flow.
+
+Q.) Real-Life Scenario: Migrating from Monolith to Microservices
+Ans:- Steps:-
+          1. Identify business domains (Bounded Contexts).
+		  2. Create individual services with their own DB.
+		  3. Use API Gateway and Service Discovery.
+		  4. Implement inter-service communication and data consistency.

@@ -1,0 +1,72 @@
+Q.) What are HTTP methods? (GET, POST, PUT, DELETE)
+Ans:- HTTP methods are used by clients (like browsers or mobile apps) to communicate with servers.
+      The most commonly used ones are:-
+	      1. GET :-
+		    Purpose: To retrieve data from the server.
+			Usage: Used to read or fetch resources.
+			Example: 
+			    GET /users/123 – retrieves user with ID 123.
+			    Safe & Idempotent: Yes (doesn’t change data).
+
+		  2. POST :-
+		    Purpose: To send data to the server to create a new resource.
+			Usage: Used when submitting forms or creating a new record.
+			Example:
+			    POST /users – creates a new user with data in the request body.
+			    Safe & Idempotent: No (can create duplicates if retried).
+
+		 3. PUT :-
+		    Purpose: To update or create a resource at a specific URL.
+		    Usage: Used to fully update a resource (or create if it doesn't exist).
+			Example:
+				PUT /users/123 – updates user with ID 123.
+				Safe & Idempotent: Idempotent (same result on repeated calls).
+
+		 4. DELETE :-
+		    Purpose: To remove a resource from the server.
+		    Usage: Used to delete data.
+			Example:
+				DELETE /users/123 – deletes user with ID 123.
+				Safe & Idempotent: Idempotent.
+ 
+
+Q.) What is idempotency ion REST APIs?
+Ans:- Safe to call multiple time without side effects.
+      Ex:- GET, PUT are idempotent; POST is not.
+
+Q.) How do you secure REST APIs (JWT, OAuth)?
+Ans:- Use JWT (Jason Web Tokens).
+      Configure Spring Security with filters and tokens validation.
+
+Q.) Status codes and their meanings?
+Ans:- Here’s a general list of common HTTP status codes and their meanings that apply to most APIs:-
+
+      1xx – Informational
+	  100 Continue – Request received, continue process.
+	  101 Switching Protocols – Protocol switching (e.g., HTTP to WebSocket).
+	  
+	  2xx – Success
+	  200 OK – The request succeeded.
+	  201 Created – A new resource has been created.
+	  202 Accepted – The request is accepted but not yet processed.
+	  204 No Content – Successful request, but no content in response.
+	  
+	  3xx – Redirection
+	  301 Moved Permanently – Resource permanently moved.
+	  302 Found – Resource temporarily moved.
+	  304 Not Modified – Cached version is up-to-date.
+	  
+	  4xx – Client Error
+	  400 Bad Request – Invalid request syntax or parameters.
+	  401 Unauthorized – Authentication required.
+	  403 Forbidden – Access denied.
+	  404 Not Found – Resource not found.
+	  405 Method Not Allowed – HTTP method not allowed for resource.
+	  409 Conflict – Request conflicts with current state of resource.
+	  422 Unprocessable Entity – Valid request but semantically incorrect.
+	  
+	  5xx – Server Error
+	  500 Internal Server Error – Generic server error.
+	  502 Bad Gateway – Invalid response from upstream server.
+	  503 Service Unavailable – Server not ready or overloaded.
+	  504 Gateway Timeout – No response from upstream server.

@@ -1,23 +1,91 @@
-Creational Design Patterns :-
+Q.) What are Design Patterns?
+Ans :- Design Patterns are typical solutions to common problems in software design.
+       They are not code, but templates or blueprints that you can adapt to solve a design problem in your own code.
+
+Q.) Types of Design Patterns:-
+Ans :- 1.) Creational Patterns
+       2.) Structural Patterns
+	   3.) Behavioral Patterns
+
+1.) Creational Design Patterns :-
                   :- Creational design patterns are concerned with the way of creating objects.
                   :- These design patterns are used when a decision must be made at the time of instantiation of a class (i.e. creating an object of a class).
                   :- There are 6 Creational Design Patterns:-
-                                                           1.) Factory Method Pattern.
-                                                           2.) Abstract Factory Pattern.
-                                                           3.) Singleton Pattern.
-                                                           4.) Prototype Pattern.
-                                                           5.) Builder Pattern.
-                                                           6.) Object Pool Pattern.
+                                                           a.) Singleton Pattern.
+														   b.) Factory Method Pattern.
+                                                           c.) Abstract Factory Pattern.
+                                                           d.) Builder Pattern.
+                                                           e.) Prototype Pattern.                                                           
+                                                           f.) Object Pool Pattern.
 
-1.) Factory Method Pattern :-
+a.) Singleton Design Pattern :-
+                         It is a creational design pattern that ensure a class has only one instance and provides a global point of access to it.
+						 Singleton ensures a class has only one instance and provides global access to it.
+                         it is commonly used for managing shared resources such as configuration settings, logging, thread pools and database connection.					 
+
+b.) Factory Method Pattern :-
                          It is a creational design pattern used in OOP.
+						 Provides an interface for creating objects, but allows subclasses to decide which class to instantiate.
                          It provides an interface of creating objects in a superclass(parent class) but allows subclass(child class) to alter the type of objects that will be created.
                          This pattern helps promote loose coupling in software design.
                          Example :- Netflix Plan(Basic, Premium & Standard which comes in NetflixPlanFactory and program as FactoryPatternProgram)
+                         It has Creator which define an abstract method for creating objects (called factoryMethod).
 
-                       :- It has Creator which define an abstract method for creating objects (called factoryMethod).
-                       :-
+c.) Abstract Factory Pattern :-
+                         It is a creational design pattern that provides an interface of creating families of related or dependent objects without specifying their concrete classes.
+						 Creates families of related objects without specifying their concrete classes.
 
-2.) Singleton Design Pattern :-
-                         It is a creational design pattern that ensure a class has only one instance and provides a global point of access to it.
-                         it is commonly used for managing shared resources such as configuration settings, logging, thread pools and database connection.
+d.) Builder Pattern :-
+                    It is a creational design pattern used in Java to construct complex objects step by step.
+					It allows creating different types and representations of an object using the same construction process.
+
+e.) Prototype Pattern :-
+                    It is a creational design pattern in Java that is used when the cost of creating a new object is expensive or complicated.
+					Insted of creating a new instance from scratch, you create a clone of an existing object.
+
+f.) Object Pool Pattern:-
+                    It is a creational design pattern that is used when the cost of initializing a class instance is high, and the same instances are needed repeatedly.
+					Instead of creatingand destroying objects repeatedly, an object pool reuses existing object from a fixed pool.
+
+2.) Structural Design Patterns :-
+                   :- There are 7 Structural Design Patterns:-
+				                                            a.) Adapter Pattern.
+															b.) Bridge Pattern.
+															c.) Composite Pattern.
+															d.) Decorator Pattern.
+															e.) Facade Pattern.
+															f.) Proxy Pattern.
+
+3.) Behavioral Design Patterns :-
+                   :- There are 5 Behavioral Design Patterns:-
+				                                            a.) Strategy Pattern.
+															b.) Observer Pattern.
+															c.) Command Pattern.
+															d.) State Pattern.
+															e.) Template Method Pattern.
+
+Interview Q&A:-
+Q1: What is the Singleton Pattern?
+Ans-: Singleton ensures a class has only one instance and provides
+      global access to it.
+
+Q2: Difference between Factory and Abstract Factory?
+Ans:- Factory creates one type of object; Abstract Factory creates
+      families of related objects.
+
+Q3: Where do you use the Strategy Pattern?
+Ans:- When multiple algorithms can be chosen at runtime, such as
+      payment strategies.
+
+Q4: How is the Decorator Pattern useful?
+Ans:- It adds functionality to objects dynamically without changing the
+      structure.
+
+Q5: What is the Observer Pattern used for?
+Ans:- To implement publish-subscribe systems like event handling in
+      GUIs.
+
+Summary Table:-
+Creational: Singleton, Factory, Abstract Factory, Builder, Prototype
+Structural: Adapter, Decorator, Composite, Proxy
+Behavioral: Strategy, Observer, Command, State, Template Method

@@ -1,0 +1,93 @@
+Multithreading
+           :- It is a process of executing multiple threads simultaneously.
+		      It is the concurrent execution of two or more threads to perform multiple tasks at the same time.
+		      It is used to obtain the multitasking.
+			  It consumes less memory and gives the fast and efficient performance.
+
+Thread
+    :- A thread is the smallest unit of execution within a process, sharing the same memory space.
+	   It is a lightweight subprocess.
+       It is a separate path of execution because each thread runs in a different stack frame.
+	   A process may contain multiple threads.
+	   Threads share the process resources, but still, they execute independently.
+
+Thread Lifecycle Diagram:-
+	         [New] -> [Runnable] -> [Running] -> [Waiting/Blocked] -> [Terminated]
+Process
+    :- A process is an independent program with its own memory space.
+
+Thread is lightweight and process is heavyweight.
+
+Q.) How can you create thread in Java?
+Ans:- A thread can be created by extending the Thread class and implementing the Runnable interfaces and then instantiating the class.
+
+start() :- It is used to begin the execution of a thread.
+           It internally calls the run() method.
+
+wait() :- It is used to make a thread wait until another thread signals the change the condition.
+
+notify() :- It is used to wake up one of the threads that are waiting after a call to wait().
+         :- Purpose of wake up of a single thread which is waiting at the object's monitor.
+
+notifyAll() :- Purpose of wake up of all the thread which is waiting at the object's monitor.
+
+join() :- It is used to wait for a thread to finish its execution before moving on to the next task.
+
+sleep() :- It is used to pause the execution of a thread for a specified amount of a time.
+
+interrupt() :- It is the proper way to signal a thread to stop in Java.
+
+Synchronization :- It is used to control access to shared resources by multiple threads, prventing concurrent access.
+
+volatile :- The volatile keyword is used to indicate that a variable's value may be modified by different threads
+
+concurrent collection :- They are designed to allow multiple threads to access and modify the collections concurrently without the need for external synchronization.
+
+Q.) Explain the concept of thread safety.
+Ans:-It ensures that a piece of code or object can be accessed by multiple threads without causing data corruption and unexpected behaviour.
+
+Daemon Thread :- A thread runs in background, providing services to other threads.
+                 It does not prevent the program from terminating if it's the only thread running.
+
+Context Switching :- It refers to the process where the CPU switches from executing one process to another.
+
+concurrency utilities :- It provide a powerful, extensible framework of high-performance threading utilities such as thread pools and blocking queues.
+
+Q.) Why wait(), notify(), notifyAll() are kept ubder object class instead of thread class?
+Ans:- They are kept in the object class instead of the thread class because they are related to the object's monitor(lock), not the t    hread itself.
+
+Q.) Synchronization?
+Ans :- Synchronization in Java is a mechanism that controls the access of multiple threads to shared resources, preventing data corruption and race conditions.
+       It ensures that only one thread can access a specific block of code or method at a time. This is achieved through the use of locks.
+	   Every object in Java has an intrinsic lock (also known as a monitor). When a thread enters a synchronized block or method, it acquires the lock for that object.
+	   Other threads attempting to enter the same synchronized block or method will be blocked until the first thread releases the lock.
+
+Q.) Difference between Thread & Runnable?
+Ans:- We can Extends Thread class.
+      We can Implements the Runnable interfaces, alows multiple inheritance.
+
+Q.) What is a deadlock? How do you prevent it?
+Ans:- When two threads wait for each other's lock and neither proceeds.
+      Avoid by acquiring locks in the same order.
+
+Q.) Explain ExecutoService and how it works.
+Ans:- ExecutorService is a high-level API provided by Java (from java.util.concurrent) for managing and controlling thread execution.
+      It decouples task submission from thread management, offering a more flexible and scalable way to handle multithreading.
+	  
+	  How It Works (Step-by-Step):-
+	  
+	  1. Create ExecutorServiceL:
+	  
+	  ExecutorService executor = Executors.newFixedThreadPool(3);
+	  
+	  2. Submit Tasks:-
+	  
+	  executor.submit(() -> {
+	      System.out.println("Running in thread: " + Thread.currentThread().getName());
+	  });
+	  
+	  3. Shutdown Executor:-
+	  
+	  executor.shutdown(); // Graceful shutdown
+
+Q.) Real-life scenario using multithreading?

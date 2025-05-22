@@ -1,33 +1,77 @@
 Java Collections Framework?
-             :- It provides a set of interfaces and classes to represent and manipulate collections of objects.
+              :- It provides a set of interfaces and classes to represent and manipulate collections of objects.
 
 Explain the difference between List, Set, and Map.
-             List :- It an ordered collection that allows duplicate elements.
+              List :- It an ordered collection that allows duplicate elements.
 
-             Set :- It is an unordered collection that does not allow duplicate elements.
+              Set :- It is an unordered collection that does not allow duplicate elements.
 
-				     Map :- It is a collection of key-value pairs.
+			  Map :- It is a collection of key-value pairs.
 
 ArrayList class?
-             :- It is a resizable array implementation of the List interface.
-			          It dynamically grows as elements are added.
+              :- It is a resizable array implementation of the List interface.
+			     It dynamically grows as elements are added.
 
 LinkedList class?
-            :- It is a doubly-linked list implementation of the List interface.
-			         It provides fast insertion and deletion but slower random access.
+              :- It is a doubly-linked list implementation of the List interface.
+			     It provides fast insertion and deletion but slower random access.
 
 HashSet class?
-            :- It is an implementation of the Map interface that uses a hash table for storage.
-			         It allows null keys and values and does not guarantee order
+              :- HashSet is an implementation of the Set interface that uses a hash table for storage.
+			     It does not allow duplicate elements.
+				 It is not synchronized.
+				 
+HashMap class?
+              :- It is an implementation of the Map interface that uses a hash table for storage.
+			     It allows null keys and values and does not guarantee order.
+				 It is not synchronized.
+				 Default initial capacity is 16
+				 Default load factor is 0.75
+
+LinkedHash Map?
+              :- LinkedHashMap is a class in Java that is part of the java.util package and implements the Map interface.
+			     It maintains a linked list of the entries in the map, in the order in which they were inserted, unlike HashMap, which does not guarantee any order.
+
+LinkedHashSet?
+              :- LinkedHashSet is a class in Java's java.util package that implements the Set interface.
+			     It extends HashSet with a linked list running through its entries.
+				 It maintains the insertion order of elements
 
 TreeSet class?
-            :- It is an implementation of the Set interface that uses a Red-Black tree for storage.
-			         It provides elements in sorted order.
+              :- It is an implementation of the Set interface that uses a Red-Black tree for storage.
+			     It provides elements in sorted order.
 
+TreeMap class?
+              :- TreeMap is a class in Java's java.util package that implements the NavigableMap interface.
+			     It is based on a Red-Black Tree. It stores key-value pairs in sorted (ascending) order of keys.
+
+Red-Black Tree
+              :- It is a self-balancing Binary Tree that uses node coloring(red or black) to maintain a balanced structure
+		         ensuring efficient search, insertion, and deletion operations with a time complexity O(log n).
+				 Every node is either red or black.
+				 The root node is always black.
+				 Every leaf (NULL) is black.
+				 If a node is red, then both of its children are black. 
+			
 What is difference between HashMap and HashTable?
-            HashMap :- It is not synchronized and allows null keys and values.
+              HashMap :- It is not synchronized and allows null keys and values.
 
-			  	  HashTable :- It is synchronized and does not allow null keys or values.
+		      HashTable :- It is synchronized and does not allow null keys or values.
+
+Collection class?
+              :- It is an interface representing a group of objects, defining fundamental operations like adding, removing and checking elements.
+			     It forms the root of the collections Framework hierachy, with sub-interfaces like List, Set & Queue extending it.
 
 Collections class?
-            :- It provides utility methods for working with collections, such as sorting, shuffling, and searching.
+              :- It provides utility methods for working with collections, such as sorting, shuffling, and searching.
+
+Comparable interface?
+              :- It is used to define the natural order of objects. Collections.sort() method.
+			  
+Comparator interface?
+              :- It is used to order the objects of user-defined classes.
+
+Q.) How does HashMap work internally?
+Ans:- Uses hashCode() and equals().
+      Stores data in a bucket array.
+	  Handles collisions using LinkedList or Red-Black Tree (Java 8+).

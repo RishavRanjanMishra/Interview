@@ -9,16 +9,22 @@ What are the main features introduced in Java 8?
   Methods References.
 
 Lambda Expressions is an anonymous function(a function without name).
+Ex:- (a, b) -> a + b for addition.
 
 Stream API is used to process collections of data in functional programming style.
+It supports opera􀆟ons like filter, map, and reduce.
 It is Immutable(not modify).
 Improve code readability and conciseness.
 Support parallel execution for better performance.
 Encourages functional programming.
+Ex:- list.stream().filter(n -> n > 10).map(n -> n * 2).collect(Collectors.toList());
 
 Functional Interfaces have exactly one abstract method and are used in lambda expressions.
+e.g., Runnable, Comparator, used with lambdas.
+Ex:- @FunctionalInterface interface MyFunc { void apply(); }
 
 Optional is used to avoid NullPointerException.
+Ex:- Optonal<String> opt = Op􀆟onal.ofNullable(name); opt.orElse("Default");
 
 Default Methods is used to add default implementations in interfaces.
 Example :-
@@ -29,5 +35,16 @@ Example :-
 	    }
 
 Date and Time API is used to improved handling of dates and times.
+A modern replacement for java.util.Date, using LocalDate, LocalTime, etc.
+Immutable and thread-safe classes: LocalDate , LocalTime , LocalDateTime .
+Ex:- LocalDate.now().plusDays(1);
 
 Method References is used to simplified syntax for calling methods.
+
+Q.) Functional interfaces & @FunctionalInterfaces
+Ans:- An interface with only one abstract method.
+      
+	  @FunctionalInterfaces
+	  interface MyFunction {
+	      void execute();
+      }

@@ -1,0 +1,120 @@
+Q.) What is the difference between Checked & Unchecked exception in Java? Can you give example of each?
+Ans:- Checked exceptions are checked at compile time and must be handled using track catch or declared in method signature using throws keyword.
+      So best example of checked exception is input-output exception and SQL exception.
+	  Now coming on unchecked exceptions.
+	  Unchecked exceptions are checked at run-time time.
+	  So the example of unchecked exceptions are null-pointed exception, arithmetic exception.
+
+Q.) What is Exception Handling in Java? Why is it used?
+Ans:- It is a mechanism to handle runtime errors, so that the normal follow of application can be maintained.
+      It is used:-
+	             To maintain program follow.
+				 To maintain runtime errors gracefully.
+				 To improve code robustness.
+				 To separate error-handling code from regular logic.
+
+Q.) Difference between Exception and Error in Java.
+Ans:- Exception is recoverable and represents issues in the program logic(Ex:- IOException, NullPointerException).
+      Error is undercoverable(Ex:- OutOfMemoryError, StackOverflowError) and typically indicates system-level issues.
+
+Q.) What is the superclass of all exceptions in Java?
+Ans:- Throwable is the superclass of all exceptions and errors in Java. Ex:- java.lang.Throwable.
+
+Q.) Explain the purpose of try, catch, finally blocks.
+Ans:- These are used for exception handling to handle runtime errors and ensure that the program continues to run or exists safely.
+      The purpose of try block contain the code that might thrown an exception.
+	  The purpose of catch block is to catches and handles the exception thrown by the try-block.
+	  You can have multiple catch blocks to handle different types of exceptions.
+	  The purpose of finally block is to contains code that always executes after that try and catch blocks, whether an exception occurred or not.
+
+Q.) What is the purpose of finally block? When does it not execute?
+Ans:- finally, it is block used in exception.
+	  finally block contains code that will be executed regardless of whether an exception is thrown or not.
+	  It is always execute afterv the try and catch blocks, whrther or not an exception is thrown.
+	  It is often used for cleanup activities.
+	  It is not execute when JVM shuts down abruptly or System.exist() is called.
+
+Q.) What happens if an exception is not caught?
+Ans:- If an exception is not caught then the JVM handles it by terminating the program and printing the stack trace.
+
+Q.) Can we have multiple catch blocks for a single try block?
+Ans:- Yes, multiple catch blocks can handle different exception types individually.
+
+Q.) Can we write only try block without catch or finally?
+Ans:- No, a try block can be followed by either a catch or finally block.
+
+Q.) What happen if an exception is thrown in the finally block?
+Ans:- Then it can override any exception thrown in the try or catch blocks, which may lead to loss of the original exception information.
+
+Q.) Can you catch multiple exception in a single catch block? Explain with syntax(Java 7+ feature).
+Ans:- Yes but in JavaScript.
+
+Q.) Can you create your own custom exception? How do you do that and when should you use one?
+Ans:- Yes. 
+      By Extending the exception class wse can create a custom exception in Java.
+	  You should create a custom exception when: Business rule violation.
+	                                             Improves code readability.
+												 Encapsulation of domain-specific.
+												 You want to enforce specific error-handling behaviour in different parts of the app.
+ 
+Q.) What is the difference between throw and throws in Java?
+Ans:- throw is used to explicitly thrown an exception.
+      throws is used to declares exceptions a method might throw.
+
+Q.) Can a try block exist without a catch block? If yes, how?
+Ans:- Yes, a try block exist without a catch  but it must be followed by a finally block.
+
+Q.) Can a try block exist without a finally block? If yes, how?
+Ans:- Yes, a try block exist without a finally block, but it must be folllowed by either a catch block , a finally block, or both.
+
+Q.) Can we rethrow an exception in Java? Give an example.
+Ans:- Yes. Rethrowing means throwing the same exception that was caught in a catch block.
+ 
+Q.) What is the difference between final, finally, and finalize()?
+Ans:- For final, when we used in class, method and object then it can't be changed.
+      Value cannot be changed.
+	  Class can't be extended/inherited.
+	  Method can't be overridden.
+ 
+      For finally, it is block used in exception.
+	  finally block contains code that will be executed regardless of whether an exception is thrown or not.
+	  It is always execute after the try and catch blocks, whrther or not an exception is thrown.
+	  It is often used for cleanup activities.
+ 
+      For finalize(), it is a method which is used to cleanup the garbage collection.
+
+Q.) What is the order of execution if both try-catch-finally blocks are present and an exception is thrown?
+Ans:- The order of exception is as follows:-
+       1.) try-block starts executing.
+	   2.) If an exception occurs in try-block, the remaining code in try is skipped.
+	   3.) The appropriate catch block is executed to handle the exception.
+	   3.) Regardless of whether an exception is occurs or not, the finally block is always executed.
+
+Q.) How does exception propagation work in Java?
+Ans:-
+
+Q.) What are suppressed exceptions? When do they occur (like in try-with-resources)?
+Ans:- Suppressed exceptions are exceptions that are thrown but not propogated because another exception is already being thrown.
+      This typically happens in the context of try-with-resources blocks.
+	  It occurs when you use a try-with-resources block.
+
+Q.) How can you handle exceptions thrown by a lambda expression?
+Ans:-
+
+Q.) What are the best practices for exception handling in enterprise-grade applications?
+Ans:-
+
+Q.) Can we override a method that throws an exception with a method that doesn't?
+Ans:- Yes.
+
+Q.) Explain custom exception handling. How do you create a custom exception in Java?
+Ans:- By Extending the exception class wse can create a custom exception in Java.
+
+Q.) What is the use of multi-catch block (Java 7+)?
+Ans:- It allows catching multiple exception types in a single catch block.
+
+Q.) What is exception chaining in Java?
+Ans:- It's link one exception with another using a constructor.
+
+Q.) What are suppressed exceptions in Java 7 (try-with-resources)?
+Ans:- Exception thrown in try-with-resources that are suppressed when a primary exception is thrown.

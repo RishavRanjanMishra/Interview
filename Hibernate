@@ -1,0 +1,48 @@
+Q.) What is Hibernate?
+Ans:- It is a pure Java object-relational mapping (ORM) and persistence framework that allows you to map plain old Java objects to relational database tables using (XML) configuration files.
+
+Q.) What is ORM?
+Ans:- ORM stands for Object Relational Mapping.
+      It is a technique which is used to map Java objects to relational database tables.
+	  It helps developers work with database using Java classes instead of SQL queries.
+
+Q.) What is JPA?
+ANs:- JPA stands for Java Persistence API.
+      It's an ORM specification.
+	  It provides a set of APIs which all the framework need to implement.
+
+Q.) What is difference between get() & load()?
+Ans:- get() :- Immediately fetches the object from the database using its primary key.
+               get(Class<T> class, Serializable id)
+			   It follow Eager.
+			   Slow performance.
+			   It returns the actual object.
+
+      load() :- Returns a proxy object. The actual database hit happens only when you access a property of the object.
+	            load(Class<T> class, Serializable id)
+				It follow Lazy.
+				Fast performance.
+				It returns the proxy that initilizes the object only when a method is called.
+
+Q.) Explain OneToMany & ManyToOne relationships.
+Ans:- These are used to model associations between two entities(table) based on foreign key constraints.
+
+      OneToMany Relationship :- One record in the parent entity associated with multiple records in the child entity.
+	                            Ex:- One Department has many Employees.
+
+	  ManyToOne Relationship :- Many records in the child enentity are associated with one records in the parent entity.
+	                            Ex:- Many Employees belong to one Department.
+
+Q.) What are Lazy & Eager loading?
+Ans:- Lazy: Data is fetched only when accessed.
+      Eager: data is fetched immediately with the parent entity.
+
+Q.) How do you write custom queries in Spring Data JPA?
+Ans:- Using JPQL (Java Persistence Query Language) or native SQL in several ways.
+      1.) Using @Query Annotation.
+	          Ex :- Using JPQL Query.
+			        Native SQL Query.
+	  2.) Named Parameters.
+	  3.) Dynamic Queries Using @Query and SpEL (Spring Expression Language).
+	  4.) Using Named Queries (in Entity Class).
+	  5.) Custom Repository Implementation (Advanced Custom Logic).

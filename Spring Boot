@@ -1,0 +1,96 @@
+Q.) What is SpringBoot?
+Ans:- It is a framework that simplifies building production-ready Spring applications by providing dafaults, auto-configuration, and embedded servers.
+
+Q.) What are the advantages of SpringBoot?
+Ans:- Auto-configuration, standalone apps, embedded servers(Tomcat, Jeety), opinionated defaults, less boilerplate, easy to start.
+
+Q.) What is difference between Spring & SpringBoot?
+Ans:- Spring is a board framework for Java applications.
+      SpringBoot builds on it to simplify setup and development.
+
+Q.) What is auto-configuration in SpringBoot?
+Ans:- SpringBoot automatically configures beans based on dependencies and properties in your classpath and configuration files.
+
+Q.) How do you create a SpringBoot application?
+Ans:- Using @SpringBootApplication annotation on the main class and running it as a Java application.
+
+Q.) What is the purpose of application.properties or application.yml?
+Ans:- They hold the configuration setings for SpringBoot applications like server ports, database URLs, etc.
+
+Q.) What is SpringBoot Starter?
+Ans:- Predefined dependency descriptors that simplify adding required dependencies for specific functionalities (like web, data JPA, security).
+
+Q.) Explain the @SpringBootApplication annotation.
+Ans:- It's the combition of @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+
+Q.) How does SpringBoot handle logging?
+Ans:- By default, it uses SpringBoot starter Looging (Logback), but you can customize with other logging frameworks.
+
+Q.) How do you run a SpringBoot application as a standalone app?
+Ans:- Run the main() method or use mvn spring-boot:run / gradle bootRun.
+
+Q.) What is SpringBoot and why is it used?
+Ans:- A framework to build standalone, production-ready Spring apps.
+      Auto-configuration, embedded servers (Tomcat), minimal setup.
+
+Q.) Diference between @Component, @Service, and @Repository?
+Ans:- All are Spring-managed beans.
+      @Component: Generic bean.
+	  @Service: For service layer.
+	  @Repository: For DAO layer with exceptions translation.
+
+Q.) How does Dependency injection work in Spring?
+Ans:- Dependency Injection (DI) in Spring is a design pattern used to implement IoC (Inversion of Control), which allows the Spring container to manage the dependencies of your application components.
+
+      How it works in Spring:-	  
+	  1. Object Creation:
+	  Spring creates objects (beans) and manages their lifecycle.
+	  
+	  2. Dependency Resolution:
+	  If a bean (say, Car) needs another bean (say, Engine), Spring injects the required dependency into Car.
+	  
+	  3. Injection Types in Spring:
+	  Constructor Injection: Dependencies are passed via constructor parameters.
+	  Setter Injection: Dependencies are set using setter methods.
+	  Field Injection: Dependencies are injected directly into fields using annotations like @Autowired.
+	  
+	  Annotations Used:-
+	  @Component: Marks the class as a Spring-managed bean.
+	  @Autowired: Tells Spring to inject the dependency automatically.
+	  @SpringBootApplication: Combines @Configuration, @ComponentScan, and @EnableAutoConfiguration.
+	  
+	  Benefits of DI in Spring:-
+	  Loose coupling between classes.
+	  Easier unit testing and mocking.
+	  Better code reusability and maintainability.
+ 
+
+Q.) How do you handle exceptions in SpringBoot (e.g. @ControllerAdvice)?
+Ans:- Using @ControllerAdvice and @ExceptionHandler.
+
+Q.) Explain SpringBoot annotations like @RestController, @RequestMapping.
+Ans:- @RestController :- @RestController is a Spring annotation used to create RESTful web services in Spring Boot.
+      It’s a combination of @Controller and @ResponseBody, meaning:
+	      The class handles web requests (@Controller)
+		  All returned objects are automatically serialized into JSON or XML and written to the HTTP response body (@ResponseBody)
+
+      @RequestMapping :- RequestMapping is a Spring annotation used to map HTTP requests to handler methods or controller classes.
+	                     It can be applied at both class level and method level.
+						 1. At Class Level :- Defines a base path for all methods in the controller:
+						                             @RequestMapping(value = "/hello", method = RequestMethod.GET)
+													 public String sayHello() {
+													 return "Hello!";
+													 }
+													 
+						 2. At Method Level :- Maps a specific URL and HTTP method:
+						                             RequestMapping(value = "/hello", method = RequestMethod.GET)
+													 public String sayHello() {
+													 return "Hello!";
+													 }
+
+@Controller :- It is used to define a controller class in Spring MVC.
+
+@RestController :- A combition of @Controller and @ResponseBody to return JSON/XML responses.
+
+@ControllerAdvice :- It is a speacial annotation used to handle exceptions and shared logic across multiple controllers.
+                     It is a part of Spring's component-scanning mechanism and works like an intercreptor of exceptions thrown by methods annotated with @RequestMapping or other controller annotations.
