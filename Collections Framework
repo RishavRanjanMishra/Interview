@@ -37,6 +37,10 @@ LinkedHashSet?
 			     It extends HashSet with a linked list running through its entries.
 				 It maintains the insertion order of elements
 
+ConcurrentHashMap?
+              :- It is a thread-safe implementation of the Map interface in Java.
+			     It is designed for concurrent access by multiple threads without the need for external synchronizatioin.
+
 TreeSet class?
               :- It is an implementation of the Set interface that uses a Red-Black tree for storage.
 			     It provides elements in sorted order.
