@@ -28,7 +28,6 @@ Ans:- HTTP methods are used by clients (like browsers or mobile apps) to communi
 			Example:
 				DELETE /users/123 – deletes user with ID 123.
 				Safe & Idempotent: Idempotent.
- 
 
 Q.) What is idempotency ion REST APIs?
 Ans:- Safe to call multiple time without side effects.
@@ -70,3 +69,5 @@ Ans:- Here’s a general list of common HTTP status codes and their meanings tha
 	  502 Bad Gateway – Invalid response from upstream server.
 	  503 Service Unavailable – Server not ready or overloaded.
 	  504 Gateway Timeout – No response from upstream server.
+
+Dispatched Servalet:- It acts as the front controller, intercepting all incoming HTTP requests and dispatching them to the appropriate controllers for processing.

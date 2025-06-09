@@ -1,0 +1,52 @@
+Post :- We have to add id
+Get:- We have to show all id
+Put:- We have to update(modify)
+Delete:- We have to delete
+
+
+
+[
+    {
+        "id": 1,
+        "title": "Morning",
+        "content": "I am Happy !"
+    },
+    {
+        "id": 2,
+        "title": "Evening",
+        "content": "I am Sad !"
+    },
+    {
+        "id": 3,
+        "title": "Ok",
+        "content": "I am Ok !"
+    },
+    {
+        "id": 4,
+        "title": "Ok Sir",
+        "content": "I am Ok Sir !"
+    }
+]
+
+
+
+
+{
+    "title": "Morning",
+    "content": "I am Happy !"
+},
+{
+    "title": "Evening",
+    "content": "I am Sad !"
+},
+{
+    "title": "Ok",
+    "content": "I am Ok !"
+},
+{
+    "title": "Ok Sir",
+    "content": "I am Ok Sir !"
+{
+    "title": "Ok sir thanks",
+    "content": "I am Ok sir thanks !"
+}

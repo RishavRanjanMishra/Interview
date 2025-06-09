@@ -7,7 +7,6 @@ Monolothic Application where all the services are in same place, designing by ot
 Team Dependencies(Drawback)
 Scability
 
-
 Key component are:-
               1.) Micriservices(Business Services).
 			  2.) API Gateway.
@@ -41,6 +40,10 @@ Q.) What is an API Gateway?
 Ans:- API Gateway is a single entry point for all client requests to microservices.
       It handles request routing, rate limiting, authentication, etc.
 	  Example: Netflix Zuul, Spring Cloud Gateway.
+
+Q.) What is Load Balancer?
+Ans:- A Load Balancer in microservices is a component(Hw or SW) that distributes incoming network traffic across multiple service instance.
+      It ensures that no single instance gets overwhelmed, improving the system's performance, availability, and fault tolerance.
 
 Q.) What is Service Discovery?
 Ans:- Service Discovery allows microservices to find each other.
@@ -78,3 +81,7 @@ Ans:- Steps:-
 		  2. Create individual services with their own DB.
 		  3. Use API Gateway and Service Discovery.
 		  4. Implement inter-service communication and data consistency.
+		  
+Q.) How to move monolothic to microservices?
+Ans:- Moving from a monolithic architecture to microservices (not macroservices) is a major transformation that involves breaking down a single large application into smaller, independently deployable services.
+      This process improves scalability, flexibility, and maintainability, but it must be done carefully.

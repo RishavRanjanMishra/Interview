@@ -1,0 +1,59 @@
+🧠 Project-Based Interview Questions & Sample Answers
+ 
+1.) Can you briefly describe your Automation Travel Agency project? 
+Ans:- The Automation Travel Agency is a Spring Boot-based backend application that allows users to manage bookings, vehicles, drivers, routes, and customers for a travel agency.
+      It uses MongoDB as the database and supports core CRUD operations via REST APIs.
+	  The application is modular, with separate controllers and model classes for each entity.
+ 
+2.) Why did you choose MongoDB instead of a relational database like MySQL or PostgreSQL?
+Ans:- MongoDB is a NoSQL document-based database which is highly scalable and flexible.
+      It works well for dynamic data models, like customers and bookings, where fields might evolve over time.
+	  Also, for faster prototyping and handling JSON-like data structures, MongoDB is more efficient than traditional RDBMS.
+
+3.) What is the project structure and what are the main modules?
+Ans:- The project follows a layered architecture:
+      Controllers: Handle HTTP requests for each entity (Customer, Driver, Booking, etc.)
+	  Models: Represent the MongoDB documents.
+	  Repositories: Extend MongoRepository for database operations.
+	  Main Application Class: Boots the Spring application.
+ 
+4.) Did you use any validation in your project?
+Ans:- Yes, I used Spring's Bean Validation API.
+      Annotations like @Email, @Min, @Size, and @Valid are used to ensure that input data is correct before processing.
+ 
+5.) How does a booking work in your system?
+Ans:- A booking involves associating a customer, vehicle, driver, and route together for a scheduled trip.
+      The BookingController handles endpoints like POST /bookings to create a new booking and GET /bookings to retrieve all bookings.
+	  Each booking is stored as a document in MongoDB.
+ 
+6.) What REST endpoints have you implemented?
+Ans:- Each entity has a RESTful CRUD API:
+      POST, GET, PUT, DELETE for /customers, /vehicles, /drivers, /routes, and /bookings.
+
+7.) How is data stored in MongoDB?
+Ans:- Each Java model class is mapped to a MongoDB collection using Spring Data annotations.
+      Fields in the models map to fields in the documents.
+	  MongoDB’s flexible schema allows storing nested objects and arrays directly.
+
+8.) What exception handling strategy have you used?
+Ans:- The project uses basic exception handling within controller methods using try-catch blocks.
+      For this version, a global exception handler is not implemented, but can be added using @ControllerAdvice.
+
+9.) Did you use DTOs in your project? Why or why not?
+Ans:- In this version, I chose not to use DTOs to keep the project simple and direct.
+      However, in a production environment, DTOs are recommended to decouple internal models from external exposure.
+
+10.) What tools or plugins did you use to build and run the project?
+Ans:- Spring Boot for application framework
+      Maven for dependency management
+	  MongoDB as the database
+	  Postman for testing APIs
+	  IntelliJ IDEA as the development IDE.
+
+11.) How would you scale or improve this project in the future?
+Ans:- Add role-based security with Spring Security
+      Use DTOs for clean API contracts
+	  Add global exception handling
+	  Write unit and integration tests
+	  Add Swagger documentation for APIs
+	  Deploy to a cloud platform like AWS or Render.

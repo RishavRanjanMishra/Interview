@@ -1,0 +1,64 @@
+Q.) Main features of Spring-Boot?
+Ans:- 1.) Auto-Configuration.
+      2.) Starter-Dependencies.
+	  3.) Embedded Servers.
+	  4.) Acuator.
+	  5.) Spring Boot CLI.
+	  6.) Production Ready.
+
+Q.) Where to use Auto-Configuration?
+Ans:- It is used in Spring-Boot application.
+      It automatically configure beans based on classpath settings, other beans, and property settings/configurations.
+	  SpringBoot automatically configures beans based on dependencies and properties in your classpath and configuration files.
+
+Q.) How do you use JPA in Project?
+Ans:- First we have to add dependency:
+           spring-boot-starter-data-jpa
+	  
+	  Configure DB in application.properties
+	  
+	  Create entity classes using @Entity
+	  
+	  Create repository interfaces extending JpaRepository
+	  
+	  Use the repository in services/controllers to fetch or persist data.
+
+Q.) How to fetch data from entity class?
+Ans:- To fetch data from an entity class in Spring-Boot, we use a repository interfaces that extends JpaRepository.
+      This provides built-in methods like findAll(), findById(), and custom query methods to fetch data from the database.
+
+Q.) If there is multiple class like controller and logging how it will be distinguished that it will be user or logging class.
+Ans:- If there are multiple classes like Controller and Logging,
+      Spring distinguishes them using annotations like @RestController, @Service, or @Component, and by the class name or bean name.
+	  Spring uses Component Scanning to identify classes and wires them based on type.
+	  If there's ambiguity, we can use @Qualifier to explicitly specify which bean to use.
+
+Q.) How you have done testing(using mockito)?
+Ans:- I have used Mockito for unit testing in Spring-Boot to mock dependencies like repositories and services.
+      Mockito allows testing components in isolation by simulating the behaviour of real objects.
+
+Q.) Which version control you have use in your project?
+Ans:- I have used Git as the version control system in my project.
+      Git helps in tracking code changes, collaborating with other developers, and managing source code in a distributed manner.
+
+Q.) How you have resolve conflicts in git?
+Ans:- I resolved Git conflicts by identifying conflicting files during merge or rebase, then manually editing the code to keep the correct version.
+      After resolving, I marked the conflicts as resolved using `git add` and committed the changes.
+
+	  Steps:-
+	  1. git pull / git merge feature-branch
+	  2. Identify conflict markers (<<<<<<<, =======, >>>>>>>)
+	  3. Manually edit and keep the correct code
+	  4. git add <file>
+	  5. git commit -m "Resolved merge conflict"
+
+Q.) What is the command to revert a file to previous 7 days?
+Ans:- SELECT *
+      FROM surveys
+	  WHERE created_at >= DATEADD(DAY, -7, GETDATE());
+
+Q.) If you are using in sql query and data is huge then how will you fetch data(millions of data)?
+Ans:- To fetch millions of records efficiently, I use techniques like pagination (LIMIT & OFFSET), indexing on filter columns, and fetching data in chunks using batch processing.
+      This avoids memory overload and improves performance.
+	  Example:-
+	  SELECT * FROM users ORDER BY id LIMIT 1000 OFFSET 0;
