@@ -1,0 +1,226 @@
+✅ Core Java
+
+1.) What is the difference between == and .equals()?
+Ans:- == compares object references.
+      .equals() compares object content (if overridden, like in String).
+ 
+2.) What are the four pillars of OOP?
+Ans:-Abstraction: Hiding internal implementation and showing only functionality.
+
+     Encapsulation: Wrapping data and code into a single unit (class), using private fields and public methods.
+	                (e.g., POJO class with private fields, getters/setters).
+					
+	 Inheritance: Acquiring properties from parent class.
+	              (e.g., class Car extends Vehicle).
+				  
+	 Polymorphism: Ability to take many forms—method overloading (compile-time) and overriding (runtime).
+
+3.) Difference between ArrayList and LinkedList
+Ans:- Feature	          ArrayList            	LinkedList
+      Structure  	      Resizable array	    Doubly Linked List
+      Access	          Fast (O(1))	        Slow (O(n))
+      Insert/Delete	      Slow	                Fast
+
+4.) Difference between HashMap and Hashtable
+Ans:-HashMap is not thread-safe, Hashtable is.
+     HashMap allows one null key, Hashtable doesn’t.
+
+5.) Difference between Runnable and Thread
+Ans:- Thread is a class; Runnable is an interface.
+      Runnable is preferred when you want to extend another class (Java supports single inheritance).
+	  
+	  class MyRunnable implements Runnable {
+	      public void run() {
+		      System.out.println("Running thread...");
+		  }
+	  }
+
+6.) Difference between ArrayList and LinkedList
+Ans:- ArrayList uses dynamic arrays, faster in retrieval.
+      LinkedList uses doubly linked list, faster in insertion/deletion in middle.
+
+7.) Checked vs Unchecked Exceptions
+Ans:- Checked: Checked at compile-time (e.g., IOException, SQLException)
+      Unchecked: Checked at runtime (e.g., NullPointerException, ArrayIndexOutOfBoundsException)
+
+8.) Java 8 - Stream API
+Ans:- List<String> names = Arrays.asList("Alice", "Bob");
+      names.stream().filter(name -> name.startsWith("A")).forEach(System.out::println);
+ 
+✅ Spring Boot
+
+1.) What is Spring Boot?
+Ans:- A rapid application development framework to create Spring applications with minimal config using embedded servers, starters, and auto-configuration.
+ 
+2.) What is @Autowired?
+Ans:- Used for dependency injection. Spring automatically injects the required bean.
+      @Autowired
+	  private UserService userService;
+
+3.) Difference between @RestController, @Service, and @Repository
+Ans:- @RestController: Combines @Controller and @ResponseBody — used for REST APIs.
+      @Service: Marks a service class; business logic layer.
+	  @Repository: DAO layer; auto-translates DB exceptions to Spring DataAccessException.
+
+4.) @Component vs @Service vs @Repository
+Ans:- All are stereotypes for Spring beans:
+      @Component: Generic bean.
+	  @Service: Service layer bean.
+	  @Repository: DAO layer bean with exception translation.
+
+5.) What is Dependency Injection?
+Ans:- It allows injecting dependencies via constructor/setter.
+      Promotes loose coupling and testability.
+	  
+	  @Service
+	  public class OrderService {
+	      private final PaymentService paymentService;
+	  
+	      @Autowired
+	      public OrderService(PaymentService paymentService) {
+	          this.paymentService = paymentService;
+	      }
+	  }
+
+6.) Spring Boot vs Spring
+Ans:- Spring Boot simplifies Spring setup with auto-config, embedded servers, and starters.
+      No need for web.xml or complex XML configuration.
+
+7.) How do you create REST API in Spring Boot?
+Ans:- @RestController
+      @RequestMapping("/users")
+	  public class UserController {
+          @GetMapping("/{id}")
+		  public User getUser(@PathVariable Long id) {
+		      return userService.getById(id);
+		  }
+	  }
+
+8.) Global Exception Handling
+Ans:- @ControllerAdvice
+      public class GlobalExceptionHandler {
+	      @ExceptionHandler(UserNotFoundException.class)
+		  public ResponseEntity<String> handleNotFound(UserNotFoundException e) {
+		      return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+		  }
+	  }
+
+✅ Spring Data JPA
+
+1.) What is JPA?
+Ans:- Java Persistence API – a specification for ORM. Hibernate is its implementation.
+ 
+2.) Entity Relationships
+Ans:- @Entity
+      public class Order {
+	      @ManyToOne
+		  private Customer customer;
+	  }
+
+3.) Lazy vs Eager Loading
+Ans:- Lazy: Loads related entities only when accessed.
+      Eager: Loads related entities immediately.
+      
+	  @OneToMany(fetch = FetchType.LAZY)
+ 
+4.) JpaRepository vs CrudRepository
+Ans:- CrudRepository: Basic CRUD.
+      JpaRepository: Extends PagingAndSortingRepository and includes JPA-specific methods like flush(), findAll(Sort sort).
+
+5.) Custom Query Example
+Ans:- @Query("SELECT e FROM Employee e WHERE e.salary > :salary")
+      List<Employee> findBySalaryGreaterThan(@Param("salary") double salary);
+
+✅ Microservices
+
+1.) @RequestParam vs @PathVariable vs @RequestBody
+Ans:- @GetMapping("/user")
+      public String getUser(@RequestParam String name) {...}
+	  
+      @GetMapping("/user/{id}")
+	  public String getById(@PathVariable Long id) {...}
+	  
+	  @PostMapping("/user")
+	  public String create(@RequestBody User user) {...}
+ 
+2.) API Versioning
+Ans:- URI versioning: /api/v1/users
+      Header versioning: Accept-version: v1
+ 
+3.) Microservices vs Monolith
+Ans:- Monolith: Single unit. Harder to scale, update.
+      Microservices: Each module is independent, easier to scale and deploy individually.
+
+4.) Service Communication
+Ans:- REST APIs (synchronous)
+      Messaging (RabbitMQ, Kafka - asynchronous)
+
+5.) Eureka Server
+Ans:-It’s a service registry where microservices register themselves for discovery by others.
+
+6.) API Gateway
+Ans:- Acts as an entry point to microservices.
+      Handles routing, authentication, rate limiting, etc.
+
+7.) Circuit Breaker
+Ans:- Prevents failure cascade by stopping requests to a failing service.
+      Libraries: Hystrix (Netflix), Resilience4j
+	  CircuitBreaker(name = "inventoryService", fallbackMethod = "fallbackInventory")
+
+✅ SQL Questions
+
+1.) Types of Joins
+Ans:- INNER JOIN – common records.
+      LEFT JOIN – all from left + matching from right.
+	  RIGHT JOIN – all from right + matching from left.
+	  FULL OUTER JOIN – all records.
+
+2.) Second Highest Salary
+Ans:- SELECT MAX(salary)
+      FROM employees
+	  WHERE salary < (SELECT MAX(salary) FROM employees);
+
+3.) ACID Properties
+Ans:- Atomicity: All or nothing.
+      Consistency: Maintains valid state.
+	  Isolation: Transactions don't interfere.
+	  Durability: Changes are permanent.
+
+4.) Second Highest Salary
+Ans:- SELECT MAX(salary) FROM employee
+      WHERE salary < (SELECT MAX(salary) FROM employee);
+
+5.) Types of JOIN
+Ans:- INNER JOIN: Common data between tables.
+      LEFT JOIN: All from left + matched from right.
+      RIGHT JOIN: All from right + matched from left.
+ 
+✅ MongoDB (if applicable)
+ 
+1.) What is a document?
+Ans:- A JSON-like object stored in MongoDB.
+      { "name": "Ravi", "age": 30, "dept": "IT" }
+
+✅ Project/Scenario-Based
+ 
+2.) Project Explanation
+Ans:- "I developed a RESTful Spring Boot application for managing travel bookings.
+      Used MongoDB for data storage, created DTOs for API communication, and handled validation via Hibernate Validator.
+	  Implemented global exception handling using @ControllerAdvice."
+
+✅ Coding Questions
+ 
+1. Reverse a string
+Ans:- String reverse(String s) {
+          return new StringBuilder(s).reverse().toString();
+      }
+ 
+2.) Stream API: Filter & sort
+Ans:- list.stream()
+          .filter(e -> e.getAge() > 25)
+		  .sorted(Comparator.comparing(Employee::getName))
+		  .collect(Collectors.toList());
+
+3.) Convert List to Map
+Ans:- Map map = list.stream()
+        .collect(Collectors.toMap(Employee::getId, Employee::getName));

@@ -1,0 +1,48 @@
+Inheritence
+       :- It is a mechanism in which a child class(subclass) have same properties, method & behaviour of parent class(superclass).
+
+Q.) Why use Inheritence?
+Ans:- Promotes code reusability.
+      Establishes a hierachical classification.
+	  Enhance maintainability and scalability of the code.
+	  Supports polymorphism, which allows dynamic method invocation.
+
+Q.) Types of Inheritence?
+Ans:- 1.) Single Inheritence.
+                    :- A subclass inherits from a single subclass.
+
+      2.) Multilevel Inheritence.
+	                :- A class inherits from another derived class(grandparents -> parent -> child).
+
+	  3.) Hierachical Inheritence.
+	                :- A single parent class is inherited by multiple child classes.
+
+	  4.) Multiple Inheritence(not supported with classes and not supported in Java).
+	                :- Java does not suuported multiple inheritence with classes to avoid ambiguity (diamond problem).
+					   However, it is possible using interfaces.
+
+Q.) Key concepts in Inheritence?
+Ans:- 1.) super Keyword.
+                  :- It is used to refer to the immediate parent class.
+
+      2.) Method Overriding.
+	              :- A subclass can override a method from its superclass.
+
+      3.) final Keyword.
+	              :- final method: Cannot be overridden.
+				     final class: Cannot be inherited.
+
+Q.) Constructors in Inheritance?
+Ans:- 1.) Constructor Execution Order.
+                  :- The parent class constructor executes first before the child class constructor.
+
+      2.) super() to call parent constructor.
+	              :- Used to explicity call a paremeterized constructor of the superclass.
+
+Q.) Key takeways?
+Ans:- 1.) Inheritance allows code reuse and hierachical structuring.
+      2.) super refers to the parent class members.
+	  3.) Method overriding enables dynamic method dispatch.
+	  4.) Java does not suuported multiple inheritence with classes, but interfaces can be used.
+	  5.) Constructors are called in order from parent to child.
+	  6.) Final methods and final classes cannot be overridden or extended.

@@ -1,0 +1,103 @@
+Abstraction
+       :- It is the process of hiding the implementation details and show only essential features of an object.
+	      Ex:- TV Remote, Vehicle, etc.
+
+Q.) Why use Abstraction?
+Ans- To reduce complexity by hiding unnecessary implementation details.
+     To increase maintainability and reusability of the code.
+     To achive loose coupling between different components.	 
+
+Q.) How to achive Abstraction?
+Ans:- Abstraction is achived using Abstract Classes(0% - 100%) & Interfaces(100% in Java 7, but support default and static methods in Java 8).
+
+Q.) Abstract Class in Java?
+Ans:- A class that cannot be instantiated(you can't create objects fromm it) and is meant to be subclassed.
+      It can contain both abstract methods(without implementation) and concrete methods(with implementation).
+
+Syntax of an Abstract Class:-
+abstract class Vehicle {
+    abstract void start(); // Abstract method(Must be implemented by child class)
+	void stop()  //Concrete method
+	{
+	  System.out.println("Vehicle is stopping...");
+	}
+}
+
+Q.) Abstract Method in Java?
+Ans:- A method doesn't have a body.
+      It means to be overridden in a subclass.
+
+Syntax of Abstract Method:-
+abstract class Animal {
+    abstract void makeSound(); // No body
+}
+class Dog extends Animal {
+    void makeSound() {  // The subclass must override the abstract method
+	    System.out.println("Bark");
+	}
+}
+
+Syntax of Abstract class and Method:-
+abstract class Vehicle {
+    abstract void start(); // Abstract method
+	void stop()  //Concrete method
+	{
+	  System.out.println("Vehicle is stopping...");
+	}
+}
+class Car extends Vehicle {
+  void start()
+  {
+    System.out.println("Car is starting with a key...");
+  }
+}
+public class Main {
+  public static void main(String[] args) {
+    Vehicle myCar = new Car();
+	myCar.start();
+	myCar.stop();
+	}
+}
+Output:-
+Car is starting with a key...
+Vehicle is stopping...
+
+Key points about Abstract Class:-
+Can have both abstract and non-abstract methods.
+Can have constructors, static methods, and instance variables.
+Cannot be instantiated directly.
+Can have final methods that cannot be overridden.
+
+Interfaces
+       :- An interface in Java is fully abstract class(before java 8).
+	      It contains abstract methods(before java 8) and is implemented by other classes using implements keyword.
+
+Syntax of an Interface:-
+interface Animal {
+    void makeSound(); // Abstract method
+}
+
+Example of Interface Implementation:-
+interface Animal {
+    void makeSound(); // Abstract method
+}
+class Dog implements Animal {
+  public  void makeSound() {
+      System.out.println("Dog barks");
+	}
+}
+public class Main {
+  public static void main(String[] args) {
+      Animal myDog = new Dog();
+	  myDog.makeSound();
+	}
+}
+Output:-
+Dog barks
+
+Key points about Interfaces:-
+Supports multiple inheritence.
+Can only contain public abstract methods(before Java 8).
+Can have default and static methods(since Java 8).
+Cannot have instance variables(only public, static, and final constants).
+Cannot have constructors.
