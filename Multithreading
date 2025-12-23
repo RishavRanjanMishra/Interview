@@ -54,7 +54,7 @@ Context Switching :- It refers to the process where the CPU switches from execut
 concurrency utilities :- It provide a powerful, extensible framework of high-performance threading utilities such as thread pools and blocking queues.
 
 Q.) Why wait(), notify(), notifyAll() are kept ubder object class instead of thread class?
-Ans:- They are kept in the object class instead of the thread class because they are related to the object's monitor(lock), not the t    hread itself.
+Ans:- They are kept in the object class instead of the thread class because they are related to the object's monitor(lock), not the thread itself.
 
 Q.) Synchronization?
 Ans :- Synchronization in Java is a mechanism that controls the access of multiple threads to shared resources, preventing data corruption and race conditions.
